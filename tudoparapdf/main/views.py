@@ -18,8 +18,9 @@ def index_test(request):
         #'ARQUIVO': request.FILES['myfile'],
         #checar se arquivo é pdf
         #'IS_PDF_?': (True if request.FILES['myfile'].name[-4:] == '.pdf' else False),
+        #checar o caminho temporario do arquivo
+        'check_path': request.FILES['myfile'].temporary_file_path()
     }
-
     context={
         'data': dct,
     }
