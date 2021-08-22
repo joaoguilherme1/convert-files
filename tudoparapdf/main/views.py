@@ -1,47 +1,48 @@
+from django.conf import settings
 from django.shortcuts import render
+from django.urls.conf import path
 from django.views.generic import TemplateView
-from django.http import HttpResponse
-from main.forms import SendForm
+from django.http import HttpResponse, FileResponse, response
+import random
+import pyheif
+import tempfile
+from PIL import Image
+import os
+import pathlib
+
+# def download(request):
+#     file_server = pathlib.Path('/static/')
+#     if not file_server.exists():
+#         menssages.error(request, 'file not found.')
+#     else:
+#         file_to_download = open(str('cubomagico64666'), 'rb')
+#         response = FileResponse(file_to_download, content_type='application/force-download')
+#         response['Content-Disposition'] = 'inline; filename="thisone"'
+#         return response
+#     return redirect('a_url_path')
 
 def index_test(request):
-    dct = {
-        'Method': request.method,
-        #get data
-        'GET_Data': request.GET,
-        #post data
-        'POST_Data': request.POST,
-        #querry string
-        'query_string': request.META['QUERY_STRING'],
-        #calcula o quadrado do campo
-        'goddam': request.POST['calculadora'],
-        'calculo_do_quadrado': (int(request.POST['calculadora']))**2,
-        #'ARQUIVO': request.FILES['myfile'],
-        #checar se arquivo é pdf
-        #'IS_PDF_?': (True if request.FILES['myfile'].name[-4:] == '.pdf' else False),
-        #checar o caminho temporario do arquivo
-        'check_path': request.FILES['myfile'].temporary_file_path()
-    }
-    context={
-        'data': dct,
-    }
 
-    if request.FILES:
-        uplfile=request.FILES['myfile']
-        context['filename']=uplfile.name
-        context['filesize']=uplfile.size
-        context['contenttype']=uplfile.content_type
-        context['filedata']=uplfile.read()
-        context['filecharset']=uplfile.charset
+    if request.method == 'GET':
+        return render(request, 'home.html')
 
-    return render(request, 'home.html', context)
-
-
-# class HomeView(TemplateView):
-#     template_name = 'home.html'
-
-#     def get(self, request):
-#         form = SendForm()
-#         return render(request, self.template_name, {'form': form})
-    
-#     def post(self, request):
-#         pass
+    elif request.method == 'POST':
+        tmp = tempfile.NamedTemporaryFile(delete=False)
+        nome = request.POST['nome_arquivo']
+        heif_file = pyheif.read(request.FILES['myfile'].temporary_file_path())
+        image = Image.frombytes(
+            heif_file.mode, 
+            heif_file.size, 
+            heif_file.data,
+            "raw",
+            heif_file.mode,
+            heif_file.stride,
+            )
+        image.save("/tmp/"+nome, "JPEG")
+        #tmp = tempfile.NamedTemporaryFile(delete=False)
+            # write to your tempfile, mode may vary
+        #fl = open(request.FILES['myfile'].temporary_file_path(), 'rb')
+        fl = open("/tmp/"+nome, 'rb')
+        response = FileResponse(fl)
+        response['Content-Disposition'] = "attachment; filename=%s" % nome
+        return response
