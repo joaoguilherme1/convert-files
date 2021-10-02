@@ -11,9 +11,10 @@
     <body>
         <h1>Hello World</h1>
 
-        <form method='POST' action='{% url 'index_test' %}' enctype='multipart/form-data'>
+        <form method='POST' action='{% url 'heif_to_jpeg' %}' enctype='multipart/form-data'>
             {% csrf_token %}
-            <input type='text' name='nome_arquivo' placeholder='Nome do arquivo'><br></br>
+            <input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
+            <input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
             <div id='images'>
                 <input type='file' name='file[]'><br></br>
             </div>
