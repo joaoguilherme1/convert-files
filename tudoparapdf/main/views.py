@@ -1,30 +1,24 @@
-from os import name
 from django.conf import settings
 from django.shortcuts import render
 from django.urls.conf import path
-from django.views.generic import TemplateView
-from django.http import HttpResponse, FileResponse, response
-import random as rd
+from django.template.response import TemplateResponse
+#from django.views.generic import TemplateView
+from django.http import FileResponse #, HttpResponse
 import pyheif
-import tempfile
 from PIL import Image
 import zipfile as zp
+import random as rd
+import time as tm
 
-# def download(request):
-#     file_server = pathlib.Path('/static/')
-#     if not file_server.exists():
-#         menssages.error(request, 'file not found.')
-#     else:
-#         file_to_download = open(str('cubomagico64666'), 'rb')
-#         response = FileResponse(file_to_download, content_type='application/force-download')
-#         response['Content-Disposition'] = 'inline; filename="thisone"'
-#         return response
-#     return redirect('a_url_path')
+def home(request):
+    return TemplateResponse(request, 'home.html', {})
+
 
 def heif_to_jpeg(request):
 
     if request.method == 'GET':
-        return render(request, 'home.html')
+
+        return render(request, 'heif_to_jpeg.html')
 
     elif request.method == 'POST':
 
