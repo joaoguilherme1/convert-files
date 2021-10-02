@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Working..</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="static/css/base.css">
+    </head>
+
+    <body>
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+            <img src="static/images/logo.png" width="200" height="200">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="{% url "home" %}">
+                Home
+            </a>
+
+            <hr class="navbar-divider">
+
+            <a class="navbar-item" href="{% url "heif_to_jpeg" %}">
+                HEIF to JPEG
+            </a>
+
+            <a class="navbar-item" href="#">
+                PDF
+            </a>
+
+            <a class="navbar-item" href="#">
+                PDF
+            </a>
+
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                More
+                </a>
+
+                <div class="navbar-dropdown is-right">
+                <a class="navbar-item" href="https://github.com/joaoguilherme1/convert-files" target="_blank">
+                    Contribute
+                </a>
+
+                <hr class="navbar-divider">
+                
+                <a class="navbar-item">
+                    Contact / Report an issue
+                </a>
+                </div>
+            </div>
+                
+            </div>
+            </div>
+        </div>
+        </nav>
+        {% block content %}
+        
+        {% endblock content %}
+        <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            <strong>Powered</strong> by <a href="https://github.com/joaoguilherme1">João Guilherme</a>. The source code of this website is disponible on <a href="https://github.com/joaoguilherme1/convert-files">GitHub</a>. Feel free to contribute :)
+            </p>
+        </div>
+        </footer>
+    </body>
+</html>
