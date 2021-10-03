@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
     {% block content %}
+    <div class='container'>
         <h1>Hello World</h1>
 
         <form method='POST' action='{% url 'heif_to_jpeg' %}' enctype='multipart/form-data'>
@@ -16,8 +17,10 @@
         <h1>-----------</h1>
         
 
-
-    <script>
+    </div>
+    <link rel="stylesheet" href="static/css/heif_to_jpeg.css">
+    <script src="static/javascript/heif_to_jpeg.js"></script>
+    {% comment %} <script>
         document.getElementById('add_image').onclick=function (ev) {
             
             var image = document.getElementById('images');
@@ -50,5 +53,5 @@
             image.appendChild(br);
             image.appendChild(br1);
         }
-    </script>
+    </script> {% endcomment %}
     {% endblock content %}
