@@ -1,25 +1,30 @@
+# Versão PT-BR
 # Website para conversão de arquivos
-Website baseado no framework Django para conversão de arquivos.
 
-#### (English Version)
-### Website for file conversion
-Website baseado no framework Django to convert files
+**Website baseado no framework Django para conversão de arquivos.**
 
 ## Sumário
+
+* Descrição
+
+* Pré-requisitos
+
+* Instalação
+
 <hr>
 
-*Descrição
 
-*Pré-requisitos
+# English Version
+# Website for file conversion
 
-*Instalação
+**Website baseado no framework Django to convert files**
 
-### Summary (English Version)
+## Summary (English Version)
 
-*Description
+* Description
 
-*Requeriments
+* Requeriments
 
-*Installation
+* Installation
 
 <hr>
