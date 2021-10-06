@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class='container-fluid'>
+        <h1>Hello World</h1>
+
+        <form method='POST' action='{% url 'heic_to_jpeg' %}' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
+            <input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
+            <div id='images'>
+                <input type='file' name='file[]' accept='.heic'><br></br>
+            </div>
+            <input type='button' name='add_image' id='add_image' value='Add Image'>
+            <input type='submit' value='Register'>
+        </form>
+    </div>
+    <link rel="stylesheet" href="static/css/heic_to_jpeg.css">
+    <script src="static/javascript/heic_to_jpeg.js"></script>
+    {% endblock content %}
