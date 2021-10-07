@@ -1,4 +1,50 @@
 {% extends 'base.html' %}
     {% block content %}
-        <h2>HOME</h2>
+        <div class="container">
+            <section class="people-cards">
+            <article class="people-cards__card"><a href="#">
+
+                <img src="static/images/file-pdf-regular.svg" alt="Carousel Img" class="people-cards__image">
+
+                <div class="people-cards__content">
+                  <h2 class="people-cards__title">.PDF</h2>
+                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+
+                  <button type="button">Conferir</button>
+                </div>
+            </article></a>
+            
+            <article class="people-cards__card"><a href="#">
+
+                <img src="static/images/file-image-solid.svg" alt="Carousel Img" class="people-cards__image">
+
+                <div class="people-cards__content">
+                  <h2 class="people-cards__title">.HEIC</h2>
+                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                </div>
+            </article></a>
+            
+            <article class="people-cards__card"><a href="#">
+
+                <img src="static/images/file-word-regular.svg" alt="Carousel Img" class="people-cards__image">
+
+                <div class="people-cards__content">
+                  <h2 class="people-cards__title">.DOCX</h2>
+                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                </div>
+            </article></a>
+            
+            <article class="people-cards__card"><a href="#">
+
+                <img src="static/images/file-csv-solid.svg" alt="Carousel Img" class="people-cards__image">
+
+                <div class="people-cards__content" style="paddint-top: 0em;">
+                  <h2 class="people-cards__title" >.CSV</h2>
+                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                </div>
+            </article></a>
+                
+        </section>
+        </div>
+        <link rel="stylesheet" href="static/css/base.css">
     {% endblock content %}

@@ -1,91 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 {% load static %}
-<html>
-
+<html lang="pt-br">
     <head>
+        <title> Help my doc </title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Working..</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/css/base.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <meta name="author" content="Daniel">
+        <meta name="description" content="descrição bacanuda">
+        <meta name="keywords" content="html5, tecnologia">
 
-    <body>
-
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a href="{% url 'home' %}">
-            <figure class="image is-96x96">
-                <img src="static/images/5.png">
-            </figure>
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-            <a class="navbar-item" href="{% url "home" %}">
-                Home
-            </a>
-
-            <hr class="navbar-divider">
-
-            <a class="navbar-item" href="{% url "heic_to_jpeg" %}">
-                HEIC to JPEG
-            </a>
-
-            <a class="navbar-item" href="#">
-                PDF
-            </a>
-
-            <a class="navbar-item" href="#">
-                PDF
-            </a>
-
-            </div>
-
-            <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                More
-                </a>
-
-                <div class="navbar-dropdown is-right">
-                <a class="navbar-item" href="https://github.com/joaoguilherme1/convert-files" target="_blank">
-                    Contribute
-                </a>
-
-                <hr class="navbar-divider">
-                
-                <a class="navbar-item">
-                    Contact / Report an issue
-                </a>
-                </div>
-            </div>
-                
-            </div>
-            </div>
-        </div>
-        </nav>
-        {% block content %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
         
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/main.css">
+      
+    </head>
+    <body class="no-js">
+        
+        <header class="header">
+          <a href="{% url 'home' %}" class="logo-text">Help my Doc</a>
+          
+          <button style="display: none;" class="header__btnMenu"> <i class="fas fa-bars fa-2x"></i> <span class="sr-only">Menu</span></button>
+          
+          <nav class="header__nav">
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'converter' %}">Converter</a></li>
+              <li><a href="{% url 'heic_to_jpeg' %}">Contato</a></li>
+            </ul>
+          </nav>
+        </header>
+        
+        <section class="hero">            
+          <h1 class="hero__title">            
+            Cutting edge <abbr title="Wordpress">WP</abbr> business theme
+          </h1>
+          <p class="hero__text">Gutful of bottlo no dramas he's got a massive hooroo.</p>                   
+        </section>
+
+        {% block content %}
+
         {% endblock content %}
+
         <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-            <strong>Powered</strong> by <a href="https://github.com/joaoguilherme1">João Guilherme</a>. The source code of this website is disponible on <a href="https://github.com/joaoguilherme1/convert-files">GitHub</a>. Feel free to contribute :)
-            </p>
-        </div>
+            <div class="container">
+                <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2021</span>
+                                
+                | Desenvolvido por <a class="footer__links" href="https://github.com/joaoguilherme1" target="_parent">João Guilherme</a> | Repositorio no <a class="footer__links" href="https://github.com/joaoguilherme1/convert-files">GitHub</a></p>
+            </div>
         </footer>
+        
+        <script src="static/javascript/base.js"></script>
+        <script src="static/javascript/base_menu.js"></script>        
+
     </body>
 </html>
