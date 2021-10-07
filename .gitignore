@@ -4,3 +4,4 @@ migrations
 manage.py
 settings.py
 urls.py
+todo.md
