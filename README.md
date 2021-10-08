@@ -14,3 +14,6 @@
 * Instalação
 
 <hr>
+
+#MIT License
+Veja o arquivo LICENSE
