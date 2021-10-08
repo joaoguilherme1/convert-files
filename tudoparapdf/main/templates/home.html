@@ -1,50 +1,60 @@
 {% extends 'base.html' %}
     {% block content %}
         <div class="container">
-            <section class="people-cards">
-            <article class="people-cards__card"><a href="#">
+            <section class="cards">
+            <article class="cards__card"><a class="cards__link"  href="#">
 
-                <img src="static/images/file-pdf-regular.svg" alt="Carousel Img" class="people-cards__image">
+                <img src="static/images/file-pdf-regular.svg" alt="Carousel Img" class="cards__image">
 
-                <div class="people-cards__content">
-                  <h2 class="people-cards__title">.PDF</h2>
-                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                <div class="cards__content">
+                  <h2 class="cards__title">.PDF</h2>
+                  <p class="cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
 
-                  <button type="button">Conferir</button>
+                  <button type="button" class="button">Conferir</button>
+
                 </div>
             </article></a>
             
-            <article class="people-cards__card"><a href="#">
+            <article class="cards__card"><a class="cards__link" href="#">
 
-                <img src="static/images/file-image-solid.svg" alt="Carousel Img" class="people-cards__image">
+                <img src="static/images/file-image-solid.svg" alt="Carousel Img" class="cards__image">
 
-                <div class="people-cards__content">
-                  <h2 class="people-cards__title">.HEIC</h2>
-                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                <div class="cards__content">
+                  <h2 class="cards__title">.HEIC</h2>
+                  <p class="cards__text">HEIC é uma extensão de arquivo que a Apple usa para o formato de imagem HEIF, que geralmente é codificado pelo codec HEVC (High Efficiency Video Compression). Este formato é ótimo para fotos ao vivo da Apple, porque pode conter uma seqüência de imagens. A melhor parte é que você pode armazenar duas vezes mais imagens no formato HEIC que no JPEG, no mesmo tamanho e qualidade, porque usa a compactação de arquivos de última geração.</p>
+
+                  <button type="button" class="button">Conferir</button>
+
                 </div>
             </article></a>
             
-            <article class="people-cards__card"><a href="#">
+            <article class="cards__card"><a class="cards__link"  href="#">
 
-                <img src="static/images/file-word-regular.svg" alt="Carousel Img" class="people-cards__image">
+                <img src="static/images/file-word-regular.svg" alt="Carousel Img" class="cards__image">
 
-                <div class="people-cards__content">
-                  <h2 class="people-cards__title">.DOCX</h2>
-                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                <div class="cards__content">
+                  <h2 class="cards__title">.DOCX</h2>
+                  <p class="cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+
+                  <button type="button" class="button">Conferir</button>
+
                 </div>
             </article></a>
             
-            <article class="people-cards__card"><a href="#">
+            <article class="cards__card"><a class="cards__link"  href="#">
 
-                <img src="static/images/file-csv-solid.svg" alt="Carousel Img" class="people-cards__image">
+                <img src="static/images/file-csv-solid.svg" alt="Carousel Img" class="cards__image">
 
-                <div class="people-cards__content" style="paddint-top: 0em;">
-                  <h2 class="people-cards__title" >.CSV</h2>
-                  <p class="people-cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                <div class="cards__content" style="paddint-top: 0em;">
+                  <h2 class="cards__title" >.CSV</h2>
+                  <p class="cards__text">HEIC é uma extensão de arquivo que a Apple usa para o formato de imagem HEIF, que geralmente é codificado pelo codec HEVC (High Efficiency Video Compression). Este formato é ótimo para fotos ao vivo da Apple, porque pode conter uma seqüência de imagens. A melhor parte é que você pode armazenar duas vezes mais imagens no formato HEIC que no JPEG, no mesmo tamanho e qualidade, porque usa a compactação de arquivos de última geração.</p>
+
+                  <button type="button" class="button">Conferir</button>
+                  
                 </div>
             </article></a>
                 
         </section>
         </div>
-        <link rel="stylesheet" href="static/css/base.css">
+        <link rel="stylesheet" href="static/css/home.css">
     {% endblock content %}

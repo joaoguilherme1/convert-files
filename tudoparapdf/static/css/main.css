@@ -28,7 +28,7 @@ img{
 
 .logo-text{
     text-transform: uppercase;
-    background-color: #63c6ae;
+    background-color: #ccd5ae;
     font-size: 24px;
     margin: 0;
     padding: 20px;
@@ -64,7 +64,7 @@ img{
     transition: .8s ease;
 }
 .header__nav a:hover {
-    color: #63c6ae;   
+    color: #d4a373;   
 }
 .header__btnMenu{
     float: right;
@@ -155,7 +155,6 @@ img{
     right: 10px;
 }
 
-
 .hero{
     height: 80vh;
     padding: 40px 20px;
@@ -172,8 +171,8 @@ img{
 }
 
 .hero__title{
-    background-color: #63c6ae;
-    color: white;
+    background-color: #e9edc9;
+    color: #3f3f3f;
     font-size: 28px;
     font-weight: 600;
     padding: 30px 20px;
@@ -181,9 +180,9 @@ img{
 }
 
 .hero__text{
-    background-color: #242a2c;
+    background-color: #faedcd;
     margin: 5px 30px 35px;
-    color: white;
+    color: #3f3f3f;
     padding: 20px;
     font-size: 16px;
 }
@@ -202,58 +201,30 @@ img{
 }
 
 /* fim header */
-/* inicio Cards */
 
-.people-cards__card:hover{
-    outline: 5px solid #63c6ae;
-    outline-offset: -5px;
+.content__feature {
+    margin-top: 5em;
+    margin-bottom: 5em;
 }
 
-.people-cards__card:hover .people-cards__title,
-.people-cards__card:hover .people-cards__text{
-    color: #63c6ae;
-}
-
-.people-cards__image{
-    width: 100%;
-    height: 125px;
-    padding-top: 2em;
-}
-
-.people-cards__content{
-    text-align: center;
-    padding: 40px 25px 10px;
-    border-left: 1px solid #dbe1e7;
-}
-
-.people-cards__title{
-    color: #737c85;
-    font-size: 21px;
-    font-weight: normal;
-}
-
-.people-cards__text{
-    color: #929da5;
-    font-size: 14px;    
-}
-
-/* fim cards */
 /* inicio footer */
 
 .footer{
     margin: auto;
-    background-color: #242a2c;
-    padding: 0px 0 25px;
-    color: #454e51;
+    background-color: #d4a373;
+    padding: 25px 0 25px;
+    color: #black;
     font-size: 14px;
     text-align: center;
 }
 
-.footer__links a{
-    color: #9ebbc5;
-    display: block;
-    font-weight: 600;
+.footer__links{
+    color: #646464;
     text-decoration: none;
+}
+
+.tm-copyright-p {
+    text-align: center;
 }
 
 @media screen and (min-width: 1024px){
@@ -292,7 +263,7 @@ img{
     }
     
     
-    .people-cards{
+    .cards{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
