@@ -1,25 +1,55 @@
 {% extends 'base.html' %}
+    {% block title %}TESTE{% endblock title %}
+    {% block titulo_hero %}{% endblock titulo_hero %}
+    {% block texto_hero %}View para heic files{% endblock texto_hero %}
+
+    {% block extrahead %}
+        <link rel="stylesheet" href="static/css/heic_to_jpeg.css">
+        <script src="static/javascript/heic_to_jpeg.js"></script>
+    {% endblock extrahead %}
+
     {% block content %}
-    <div class='container mt-5'>
-      <div class='row'>
-        <div class='col-sm-4'>
-        </div>
-        <div class='col-lg-16'>
-            <form method='POST' action='{% url 'heic_to_jpeg' %}' enctype='multipart/form-data'>
-                {% csrf_token %}
-                <input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
-                <input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
-                <div id='images'>
-                    <input type='file' name='file[]' accept='.heic'><br></br>
+                <div class="container">
+                <div class="row">
+                    <div class="col">
+                    <form method='POST' action='{% url 'heic_to_jpeg' %}' enctype='multipart/form-data'>
+                    {% csrf_token %}
+                        <h5>Escolha o nome dos arquivos</h5><input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
+                        <h5>Escolha um nome para sua pasta de arquivos</h5><input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
+                        <h5>Selecione os arquivos para conversão</h5><input type='file' name='file[]' accept='.heic' data-buttonText="Coloque seu arquivos aqui" multiple><br></br>
+                    </div>
+                    <div class="col">
+                            <h5>Clique para converter</h5>
+                            <button type="submit" class="btn btn-success">Success</button>
+                            <hr style="size: 10px;">
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                            Duvidas ?
+                            </button>
+
+                            <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Duvidas</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    Modal body..
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                </div>
+
+                                </div>
+                            </div>
+                            </div>
+
+                    </form>
+                    </div>
                 </div>
-                <input class="btn btn-default" type='button' name='add_image' id='add_image' value='Add Image'>
-                <input type='submit' value='Register'>
-            </form>
-        </div>
-        <div class='col-sm-4'>
-        </div>
-      </div>
-    </div>
-    <link rel="stylesheet" href="static/css/heic_to_jpeg.css">
-    <script src="static/javascript/heic_to_jpeg.js"></script>
+                </div>
     {% endblock content %}

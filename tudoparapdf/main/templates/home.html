@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
+    {% block title %}Help My Doc{% endblock title %}
+    {% block titulo_hero %}Bem-vindo  ao Help My Doc Website{% endblock titulo_hero %}
+    {% block texto_hero %}Não é necessario criar conta e todas as conversões são 100% gratuitas{% endblock texto_hero %}
+
+    {% block extrahead %}
+        <link rel="stylesheet" href="static/css/home.css">
+    {% endblock extrahead %}
+
     {% block content %}
         <div class="container">
             <section class="cards">
@@ -8,20 +16,20 @@
 
                 <div class="cards__content">
                   <h2 class="cards__title">.PDF</h2>
-                  <p class="cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                  <p class="cards__text">O <strong>PDF</strong> (Portable Document Format)</strong> é um formato de arquivo, desenvolvido pela Adobe Systems em 1993, para representar documentos de maneira independente do aplicativo, do hardware e do sistema operacional usados para criá-los.</p>
 
                   <button type="button" class="button">Conferir</button>
 
                 </div>
             </article></a>
             
-            <article class="cards__card"><a class="cards__link" href="#">
+            <article class="cards__card"><a class="cards__link" href="{% url 'heic_to_jpeg' %}">
 
                 <img src="static/images/file-image-solid.svg" alt="Carousel Img" class="cards__image">
 
                 <div class="cards__content">
                   <h2 class="cards__title">.HEIC</h2>
-                  <p class="cards__text">HEIC é uma extensão de arquivo que a Apple usa para o formato de imagem HEIF, que geralmente é codificado pelo codec HEVC (High Efficiency Video Compression). Este formato é ótimo para fotos ao vivo da Apple, porque pode conter uma seqüência de imagens. A melhor parte é que você pode armazenar duas vezes mais imagens no formato HEIC que no JPEG, no mesmo tamanho e qualidade, porque usa a compactação de arquivos de última geração.</p>
+                  <p class="cards__text"><strong>HEIC</strong> é o nome do formato de arquivo que a Apple escolheu para o novo padrão <strong>HEIF</strong>. HEIF significa "High Efficiency Image Format" e, como o nome sugere, é uma maneira mais simplificada de armazenar arquivos de imagem com alta qualidade.</p>
 
                   <button type="button" class="button">Conferir</button>
 
@@ -34,7 +42,7 @@
 
                 <div class="cards__content">
                   <h2 class="cards__title">.DOCX</h2>
-                  <p class="cards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                  <p class="cards__text">A extensão do arquivo <strong>DOCX</strong> é relacionado para o Microsoft Word desenvolvido pela Microsoft Corporation em sua versão de 2007 e 2010. Este novo formato de documento também tem a mesma finalidade que o extensões de arquivo DOC.</p>
 
                   <button type="button" class="button">Conferir</button>
 
@@ -47,7 +55,7 @@
 
                 <div class="cards__content" style="paddint-top: 0em;">
                   <h2 class="cards__title" >.CSV</h2>
-                  <p class="cards__text">HEIC é uma extensão de arquivo que a Apple usa para o formato de imagem HEIF, que geralmente é codificado pelo codec HEVC (High Efficiency Video Compression). Este formato é ótimo para fotos ao vivo da Apple, porque pode conter uma seqüência de imagens. A melhor parte é que você pode armazenar duas vezes mais imagens no formato HEIC que no JPEG, no mesmo tamanho e qualidade, porque usa a compactação de arquivos de última geração.</p>
+                  <p class="cards__text"><strong>CSV</strong> é um formato de arquivo que significa “Comma Separated Values” (valores separados por vírgulas). Isso significa que os campos de dados indicados neste formato normalmente são separados ou delimitados por uma vírgula.</p>
 
                   <button type="button" class="button">Conferir</button>
                   
@@ -56,5 +64,4 @@
                 
         </section>
         </div>
-        <link rel="stylesheet" href="static/css/home.css">
     {% endblock content %}
