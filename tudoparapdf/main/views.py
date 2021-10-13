@@ -1,13 +1,14 @@
 from django.conf import settings
+from django.http import response
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls.conf import path
 from django.template.response import TemplateResponse
-from django.core.exceptions import EmptyResultSet, MultipleObjectsReturned, PermissionDenied
 #from django.views.generic import TemplateView
 from django.http import FileResponse #, HttpResponse
 import pyheif
 from PIL import Image
+import os
 import zipfile as zp
 import random as rd
 import time as tm
@@ -26,7 +27,6 @@ def heic_to_jpeg(request):
 
     elif request.method == 'POST':
 
-        #horario_do_request = tm.strftime("(%d/%m/%Y)|%H:%M", tm.localtime()) # BUGANDO
         name_files = request.POST['nome_arquivo']
         name_dir = request.POST['nome_pasta']
         name_dir_with_main_dir = f'/tmp/{name_dir}.zip'
@@ -37,15 +37,16 @@ def heic_to_jpeg(request):
         elif name_dir == '':
             name_dir = 'Zipando'
 
-        if len(images_heic) == 0 or len(images_heic) >= 4:
-            raise PermissionDenied('É necessario selecionar no minimo 1 e no maximo 4 para converter')
+        if len(images_heic) == 0 or len(images_heic) > 20:
+            return HttpResponse(status=403)
 
         else:
             middle_zipfile = zp.ZipFile(name_dir_with_main_dir, 'w')
+
             for i in range(len(images_heic)):
 
                 if images_heic[i].size > 4000000:
-                    return HttpResponseBadRequest()
+                    return HttpResponse(status=403)
 
                 else:
                     heif_file = pyheif.read(images_heic[i].temporary_file_path())
