@@ -1,7 +1,4 @@
 db.sqlite3
 __pycache__
 migrations
-manage.py
-settings.py
-urls.py
-todo.md
+credenciais.py
