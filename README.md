@@ -31,9 +31,9 @@ Decidi criar esse site para tornar a experiencia de converter arquivos mais rapi
 ## 2. Pré-requisitos <a name="pre-requisitos"></a>
 
 
-## 3. Instalação {.tabset .tabset-fade} <a name="instalação"></a> 
+## 3. Instalação {.tabset .tabset-fade}
 
-### Linux {.active}
+### Linux
 ``
 Esse codigo
 ``
@@ -42,7 +42,7 @@ Esse codigo
 ``
 Em breve...
 ``
-## 
+## {-}
 
 ## 4. Conhecimento adquirido no projeto <a name="conhecimento"></a>
 
