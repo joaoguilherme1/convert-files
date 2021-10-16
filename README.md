@@ -1,13 +1,20 @@
-<h1 style="align: center;">Helpmydoc - READme versão PT-BR</h1>
-<p style="align: center;">
-![Screen](https://img.shields.io/badge/license-MIT-blue.svg)
-![Screen](https://img.shields.io/badge/platform-Linux-lightgrey.svg)
+<h1 align="center">
+  Helpmydoc - README versão PT-BR
+</h1>
+<h1 align="center">
+  <a href="http://helpmydoc.net/">helpmydoc.net</a>
+</h1>
+
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/joaoguilherme1/convert-files?style=for-the-badge">
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joaoguilherme1/convert-files?style=for-the-badge">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/joaoguilherme1/convert-files?color=green&style=for-the-badge">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/joaoguilherme1/convert-files?style=for-the-badge">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/joaoguilherme1/convert-files?style=for-the-badge">
+<img alt="Website" src="https://img.shields.io/website?style=for-the-badge&url=http%3A%2F%2Fhelpmydoc.net%2F">
 </p>
-# Website para conversão de arquivos
 
-**Website baseado no framework Django para conversão de arquivos.**
-
-## Sumário
+### Sumário
 
 1. [Descrição/Resumo](#descrição)
 2. [Pré-requisitos](#pre-requisitos)
@@ -17,14 +24,48 @@
 
 <hr>
 
-# 1. Descrição / Resumo <a name="descrição"></a>
+## 1. Descrição / Resumo <a name="descrição"></a>
 
-# 2. Pré-requisitos <a name="pre-requisitos"></a>
+Decidi criar esse site para tornar a experiencia de converter arquivos mais rapida, facil e principalmente segura.
 
-# 3. Rodando o projeto / Instalação <a name="instalação"></a>
+## 2. Pré-requisitos <a name="pre-requisitos"></a>
 
-# 4. Conhecimento adquirido no projeto <a name="conhecimento"></a>
 
-# 5. Licença <a name="licença"></a>
+## 3. Instalação <a name="instalação"></a> 
 
-## MIT License - Veja o arquivo [LICENSE.md](LICENSE.md)
+## Começo {.tabset}
+
+### Linux {.active}
+``
+Esse codigo
+``
+
+### Windows
+``
+Em breve...
+``
+
+## {-}
+
+## 4. Conhecimento adquirido no projeto <a name="conhecimento"></a>
+
+Ferramentas usadas nesse projeto:
+
+- Python
+	- Django
+- Javascript
+- HTML
+- CSS
+	- Bootstrap
+- AWS
+	- EC2
+		- Ubuntu
+	- Route 53
+	- CloudWatch
+- uWSGI
+- Nginx
+
+
+## 5. Licença <a name="licença"></a>
+
+MIT License - Veja o arquivo [LICENSE.md](LICENSE.md)
