@@ -33,16 +33,29 @@ Decidi criar esse site para tornar a experiencia de converter arquivos mais rapi
 
 ## 3. Instalação {.tabset .tabset-fade}
 
-### Linux
+
 ``
-Esse codigo
+#Ambiente linux
+
+#instalando vitualenv na versão 
+y
+
+#clonando o repositorio
+x
+
+#instalando os arquivos do projeto
+pip install -r /caminho/para/requirements.txt
 ``
 
-### Windows
+<p>Para subir o repositório no github foi necessario esconder algumas chaves do projeto. então sera necessario criar um arquivo chamado credenciais.py no caminho /tudoparapdf/tudoparapdf/credenciais.py com o conteudo :</p>
+
 ``
-Em breve...
+#conteudo do arquivo
+
+chave = SUA_CHAVE_DJANGO
+hosts = []
+status = True
 ``
-## {.unlisted .unnumbered}
 
 ## 4. Conhecimento adquirido no projeto <a name="conhecimento"></a>
 
