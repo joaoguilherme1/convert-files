@@ -16,9 +16,14 @@ import time as tm
 def home(request):
     return TemplateResponse(request, 'home.html', {})
 
-def converter(request):
-    return HttpResponse('<h1>convertendo</h1>')
+def pdf(request):
+    return TemplateResponse(request, 'pdf.html', {})
 
+def csv(request):
+    return TemplateResponse(request, 'csv.html', {})
+
+def docx(request):
+    return TemplateResponse(request, 'docx.html', {})
 def heic_to_jpeg(request):
 
     if request.method == 'GET':
@@ -33,9 +38,9 @@ def heic_to_jpeg(request):
         images_heic = request.FILES.getlist('file[]')
 
         if name_files == '':
-            name_files = 'Convertendo'
+            name_files = 'helpmydoc_arquivo'
         elif name_dir == '':
-            name_dir = 'Zipando'
+            name_dir = 'Pasta_helpmydoc'
 
         if len(images_heic) == 0 or len(images_heic) > 20:
             return HttpResponse(status=403)
