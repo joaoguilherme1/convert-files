@@ -10,13 +10,13 @@
     {% block content %}
         <div class="container">
             <section class="cards">
-            <article class="cards__card"><a class="cards__link"  href="#">
+            <article class="cards__card"><a class="cards__link"  href="{% url 'pdf' %}">
 
                 <img src="static/images/file-pdf-regular.svg" alt="Carousel Img" class="cards__image">
 
                 <div class="cards__content">
                   <h2 class="cards__title">.PDF</h2>
-                  <p class="cards__text">O <strong>PDF</strong> (Portable Document Format)</strong> é um formato de arquivo, desenvolvido pela Adobe Systems em 1993, para representar documentos de maneira independente do aplicativo, do hardware e do sistema operacional usados para criá-los.</p>
+                  <p class="cards__text" align="justify">O <strong>PDF</strong> (Portable Document Format)</strong> é um formato de arquivo, desenvolvido pela Adobe Systems em 1993, para representar documentos de maneira independente do aplicativo, do hardware e do sistema operacional usados para criá-los.</p>
 
                   <button type="button" class="button">Conferir</button>
 
@@ -29,33 +29,33 @@
 
                 <div class="cards__content">
                   <h2 class="cards__title">.HEIC</h2>
-                  <p class="cards__text"><strong>HEIC</strong> é o nome do formato de arquivo que a Apple escolheu para o novo padrão <strong>HEIF</strong>. HEIF significa "High Efficiency Image Format" e, como o nome sugere, é uma maneira mais simplificada de armazenar arquivos de imagem com alta qualidade.</p>
+                  <p class="cards__text" align="justify"><strong>HEIC</strong> é o nome do formato de arquivo que a Apple escolheu para o novo padrão <strong>HEIF</strong>. HEIF significa "High Efficiency Image Format" e, como o nome sugere, é uma maneira mais simplificada de armazenar arquivos com qualidade.</p>
 
                   <button type="button" class="button">Conferir</button>
 
                 </div>
             </article></a>
             
-            <article class="cards__card"><a class="cards__link"  href="#">
+            <article class="cards__card"><a class="cards__link"  href="{% url 'docx' %}">
 
                 <img src="static/images/file-word-regular.svg" alt="Carousel Img" class="cards__image">
 
                 <div class="cards__content">
                   <h2 class="cards__title">.DOCX</h2>
-                  <p class="cards__text">A extensão do arquivo <strong>DOCX</strong> é relacionado para o Microsoft Word desenvolvido pela Microsoft Corporation em sua versão de 2007 e 2010. Este novo formato de documento também tem a mesma finalidade que o extensões de arquivo DOC.</p>
+                  <p class="cards__text" align="justify">A extensão do arquivo <strong>DOCX</strong> é relacionado para o Microsoft Word desenvolvido pela Microsoft Corporation em sua versão de 2007 e 2010. Este novo formato de documento também tem a mesma finalidade que o extensões de arquivo DOC.</p>
 
                   <button type="button" class="button">Conferir</button>
 
                 </div>
             </article></a>
             
-            <article class="cards__card"><a class="cards__link"  href="#">
+            <article class="cards__card"><a class="cards__link"  href="{% url 'csv' %}">
 
                 <img src="static/images/file-csv-solid.svg" alt="Carousel Img" class="cards__image">
 
                 <div class="cards__content" style="paddint-top: 0em;">
                   <h2 class="cards__title" >.CSV</h2>
-                  <p class="cards__text"><strong>CSV</strong> é um formato de arquivo que significa “Comma Separated Values” (valores separados por vírgulas). Isso significa que os campos de dados indicados neste formato normalmente são separados ou delimitados por uma vírgula.</p>
+                  <p class="cards__text" align="justify"><strong>CSV</strong> é um formato de arquivo que significa “Comma Separated Values” (valores separados por vírgulas). Isso significa que os campos de dados indicados neste formato normalmente são separados ou delimitados por uma vírgula.</p>
 
                   <button type="button" class="button">Conferir</button>
                   
