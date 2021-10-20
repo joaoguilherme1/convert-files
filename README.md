@@ -26,7 +26,11 @@
 
 ## 1. Descrição / Resumo <a name="descrição"></a>
 
-Decidi criar esse site para tornar a experiencia de converter arquivos mais rapida, facil e principalmente segura.
+O website tem como uma de suas funções explorar a pasta /tmp/ que estão disponiveis na maioria da distros linux, de maneira que, ao usuario enviar um arquivo, o servidor consiga baixar e em seguida ja converter o arquivo guardando-o no sistema por um periodo curto de tempo até que ele seja deletado.
+
+Foi pensado também na simplicidade com que o usuario poderia enviar os arquivos, e principalmente tornando o site open-source para que todos possam colaborar.
+
+A pasta /tmp/ é configurada na máquina de modo que de 30 em 30 minutos o sistema reboota e os arquivos presentes nela são deletados, portanto isso é a garantia ded que os arquivos não ficam salvos.
 
 ## 2. Pré-requisitos <a name="pre-requisitos"></a>
 
@@ -36,11 +40,11 @@ Decidi criar esse site para tornar a experiencia de converter arquivos mais rapi
 ```
 #Ambiente linux
 
-#instalando vitualenv na versão 
-y
+#instalando vitualenv
+$ python3 -m venv <nome_da_venv_aqui>
 
 #clonando o repositorio
-x
+$ git clone https://github.com/joaoguilherme1/convert-files
 
 #instalando os arquivos do projeto
 pip install -r /caminho/para/requirements.txt
