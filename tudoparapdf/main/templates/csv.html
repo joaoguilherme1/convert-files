@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
     {% block title %}Converter CSV{% endblock title %}
+
+    {% block extrahead %}{% endblock extrahead %}
+
+    {% block image_hero %}{% static 'images/file-earmark-bar-graph.svg' %}{% endblock image_hero %}
+
     {% block titulo_hero %}Arquivos CSV{% endblock titulo_hero %}
+
     {% block texto_hero %}Converter arquivos CSV{% endblock texto_hero %}
 
-    {% block extrahead %}
-        <link rel="stylesheet" href="static/css/csv.css">
-    {% endblock extrahead %}
 
     {% block content %}
-
     {% endblock content %}

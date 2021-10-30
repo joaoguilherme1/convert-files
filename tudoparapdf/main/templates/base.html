@@ -1,73 +1,86 @@
 <!doctype html>
 {% load static %}
 <html lang="pt-br">
-    <head>
-        <title>Help My Doc | {% block title %}{% endblock title %}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">  
-        <meta name="author" content="João Guilherme">
-        <meta name="description" content="descrição aqui">
-        <meta name="keywords" content="html5, tecnologia">
+  <head>
+    <title>Help My Doc | {% block title %}{% endblock title %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="João Guilherme">
+    <meta name="description" content="descrição aqui">
+    <meta name="keywords" content="html5, tecnologia">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extrahead %}{% endblock extrahead %}
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <link rel="stylesheet" href="{% static "/css/main.css" %}">
-        <link rel="stylesheet" href="{% static "/css/normalize.css" %}">
-        <script src="static/javascript/base.js"></script>
-        <script src="{% static "javascript/base_menu.js" %}"></script>    
-        {% block extrahead %}{% endblock extrahead %}
-      
-    </head>
-    <body class="no-js">
-        
-        <header class="header">
-          <a href="{% url 'home' %}" class="logo-text">Help my Doc</a>
-          
-          <button style="display: none;" class="header__btnMenu"> <i class="fas fa-bars fa-2x"></i> <span class="sr-only">Menu</span></button>
-          
-          <nav class="header__nav">
-            <ul>
-              <li><a href="{% url 'home' %}">Home</a></li>
-              <li><a href="{% url 'pdf' %}">Converter PDF</a></li>
-              <li><a href="{% url 'heic_to_jpeg' %}">Converter HEIC</a></li>
-              <li><a href="{% url 'docx' %}">Converter DOCX</a></li>
-              <li><a href="{% url 'csv' %}">Converter CSV</a></li>
-              <li><a href="https://github.com/joaoguilherme1/convert-files/issues"  target="_blank">Contato</a></li>
-            </ul>
-          </nav>
-        </header>
-        
-        <section class="hero">
-          <h1 class="hero__title">{% block titulo_hero %}{% endblock titulo_hero %}</h1>
-          <p class="hero__text">{% block texto_hero %}{% endblock texto_hero %}</p>                   
-        </section>
+  </head>
+  <body>
 
-        <div class="content__feature">
-            <div class='container mt-5'>
-              <div class='row'>
-                <div class='col-sm-4'>
-                </div>
-                <div class='col-lg-16'>
-                {% block content %}
-
-                {% endblock content %}
-                </div>
-                <div class='col-sm-4'>
-                </div>
-              </div>
-            </div>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-        <footer class="footer">
-            <div class="container__footer">
-                <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2021</span> | Desenvolvido por <a class="footer__links" href="https://github.com/joaoguilherme1" target="_parent">João Guilherme</a> | Repositorio no <a class="footer__links" href="https://github.com/joaoguilherme1/convert-files">GitHub</a></p>
-            </div>
-        </footer>
-    </body>
+    <!-- Começo Header -->
+    <div class="container" id="herocustom">
+      <header class="d-flex fixed-top bg-white justify-content-center py-3">
+        <ul class="nav nav-pills ">
+          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Converções
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item " href="{% url 'pdf' %}">PDF</a></li>
+              <li><a class="dropdown-item" href="{% url 'heic_to_jpeg' %}">HEIC</a></li>
+              <li><a class="dropdown-item" href="{% url 'docx' %}">DOCX</a></li>
+              <li><a class="dropdown-item" href="{% url 'csv' %}">CSV</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">Contribua</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+        </ul>
+      </header>
+    </div>
+    <!-- Fim Header -->
+
+    <!-- Começo Hero -->
+    <div class="px-4 py-5 my-5 text-center gradient-custom">
+      <img src="{% block image_hero %}{% endblock image_hero %}" alt="image_hero" width="{% block image_hero_width %}{% endblock image_hero_width %}" height="{% block image_hero_height %}{% endblock image_hero_height %}">
+      <h1 class="display-5 fw-bold">{% block titulo_hero %}{% endblock titulo_hero %}</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">{% block texto_hero %}{% endblock texto_hero %}</p>
+      </div>
+    </div>
+    <!-- Fim Hero -->
+
+    <!-- Começo Content -->
+    {% block content %}
+    {% endblock content %}
+    <!-- Fim Content -->
+
+    <!-- Começo Footer -->
+    <div class="container">
+      <footer class="py-3 bg-white">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item mx-2"><a href="#" class="nav-link px-2 text-muted"><img src="{% static 'images/telegram.svg' %}" alt="Bootstrap" width="32" height="32"></a></li>
+          <li class="nav-item mx-2"><a href="#" class="nav-link px-2 text-muted"><img src="{% static 'images/github.svg' %}" alt="Bootstrap" width="32" height="32"></a></li>
+        </ul>
+        <p class="text-center text-muted">Copyright © 2021 | Desenvolvido por <a href="#" style="text-decoration:none">João Guilherme</a></p>
+      </footer>
+    </div>
+    <!-- Fim Footer -->
+    
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
 </html>

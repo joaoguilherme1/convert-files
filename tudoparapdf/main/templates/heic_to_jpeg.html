@@ -1,68 +1,72 @@
 {% extends 'base.html' %}
+{% load static %}
     {% block title %}Converter HEIC para JPEG{% endblock title %}
+
+    {% block extrahead %}{% endblock extrahead %}
+
+    {% block image_hero %}{% static 'images/apple.svg' %}{% endblock image_hero %}
+    {% block image_hero_width %}64{% endblock image_hero_width %}
+    {% block image_hero_height %}64{% endblock image_hero_height %}
+
     {% block titulo_hero %}HEIC para JPEG{% endblock titulo_hero %}
+
     {% block texto_hero %}Converta arquivos .heif em arquivos .jpeg{% endblock texto_hero %}
 
-    {% block extrahead %}
-        <link rel="stylesheet" href="static/css/heic_to_jpeg.css">
-        <script src="static/javascript/heic_to_jpeg.js"></script>
-    {% endblock extrahead %}
-
     {% block content %}
-                <div class="container">
-                <div class="row">
-                    <div class="col">
-                    <form method='POST' action='{% url 'heic_to_jpeg' %}' enctype='multipart/form-data'>
-                    {% csrf_token %}
-                        <h5>Escolha o nome dos arquivos</h5><input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
-                        <h5>Escolha um nome para sua pasta de arquivos</h5><input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
-                        <h5>Selecione os arquivos para conversão</h5><input type='file' name='file[]' accept='.heic' data-buttonText="Coloque seu arquivos aqui" multiple><br></br>
-                    </div>
-                    <div class="col">
-                        <h5>Clique para converter</h5>
-                        <button type="submit" class="btn btn-success">Converter</button>
-                    </form>
-                        <hr style="height: 1px">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                        Dúvidas ?
-                        </button>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+        <form method='POST' action='{% url 'heic_to_jpeg' %}' enctype='multipart/form-data'>
+        {% csrf_token %}
+            <h5>Escolha o nome dos arquivos</h5><input type='text' name='nome_arquivo' placeholder='Nome dos arquivos'><br></br>
+            <h5>Escolha um nome para sua pasta de arquivos</h5><input type='text' name='nome_pasta' placeholder='Nome da pasta'><br></br>
+            <h5>Selecione os arquivos para conversão</h5><input type='file' name='file[]' accept='.heic' data-buttonText="Coloque seu arquivos aqui" multiple><br></br>
+        </div>
+        <div class="col">
+            <h5>Clique para converter</h5>
+            <button type="submit" class="btn btn-success">Converter</button>
+        </form>
+            <hr style="height: 1px">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Dúvidas ?
+            </button>
 
-                        <div class="modal" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
+            <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-                            <div class="modal-header">
-                                <h4 class="modal-title">Dúvidas</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="modal-body" style="text-align: left;">
-                                <ul>
-                                    <li>Porque escolher o nome dos arquivos ?
-                                    <p>R: Como o arquivo é baixado temporariamente, o site não consegue pegar o nome do arquivo que foi inserido, logo é necessario colocar um novo nome.</p>
-                                    <hr style="width: 50%;">
-                                    <li>Porque escolher o nome da pasta de arquivos ?
-                                    <p>R: A pasta é criada pelo servidor, portanto o usuário pode escolher qualquer nome para ela.</p>
-                                    <hr style="width: 50%;">
-                                    <li>O arquivo que eu estou convertendo fica salvo em algum lugar ?
-                                    <p>R: O servidor baixa o seu arquivo temporariamente para converter e depois ja o envia de volta convertido.</p>
-                                    <hr style="width: 50%;">
-                                    <li>Qual a quantidade de arquivos que posso converter de uma vez ?
-                                    <p>R: A capacidade máxima de conversão é de 20 arquivos.</p>
-                                    <hr style="width: 50%;">
-                                    <li>Qual o tamanho máximo dos arquivos que posso converter ?
-                                    <p>R: O tamanho máximo de cada arquivo é 4MB.</p>
-                                </ul>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                            </div>
-
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                <div class="modal-header">
+                    <h4 class="modal-title">Dúvidas</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
+
+                <div class="modal-body" style="text-align: left;">
+                    <ul>
+                        <li>Porque escolher o nome dos arquivos ?
+                        <p>R: Como o arquivo é baixado temporariamente, o site não consegue pegar o nome do arquivo que foi inserido, logo é necessario colocar um novo nome.</p>
+                        <hr style="width: 50%;">
+                        <li>Porque escolher o nome da pasta de arquivos ?
+                        <p>R: A pasta é criada pelo servidor, portanto o usuário pode escolher qualquer nome para ela.</p>
+                        <hr style="width: 50%;">
+                        <li>O arquivo que eu estou convertendo fica salvo em algum lugar ?
+                        <p>R: O servidor baixa o seu arquivo temporariamente para converter e depois ja o envia de volta convertido.</p>
+                        <hr style="width: 50%;">
+                        <li>Qual a quantidade de arquivos que posso converter de uma vez ?
+                        <p>R: A capacidade máxima de conversão é de 20 arquivos.</p>
+                        <hr style="width: 50%;">
+                        <li>Qual o tamanho máximo dos arquivos que posso converter ?
+                        <p>R: O tamanho máximo de cada arquivo é 4MB.</p>
+                    </ul>
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
     {% endblock content %}
