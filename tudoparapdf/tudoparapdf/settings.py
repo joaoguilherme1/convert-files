@@ -12,23 +12,28 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import credenciais
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = credenciais.chave
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = credenciais.status
+DEBUG = os.environ['DEBUG']
 
-ALLOWED_HOSTS = credenciais.hosts
-
+ENV_ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS') or None
+ALLOWED_HOSTS = []
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOSTS')]
 
 # Application definition
 
@@ -123,7 +128,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+#STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+
 
 MEDIA_ROOT = '/tmp/'
 MEDIA_URL = '/media/'
