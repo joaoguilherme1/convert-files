@@ -1,0 +1,18 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #48c6ef;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, rgba(72, 198, 239, 1), rgba(111, 134, 214, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, rgba(72, 198, 239, 1), rgba(111, 134, 214, 1))
+  }
+
+#herocustom {
+    margin-top: 5.5em;
+}
+
+.btncustom {
+    border-radius: 2em;
+}
