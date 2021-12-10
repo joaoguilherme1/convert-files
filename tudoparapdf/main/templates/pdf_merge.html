@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+    {% block title %}Converter PDF{% endblock title %}
+    {% block titulo_hero %}Arquivos PDF{% endblock titulo_hero %}
+    {% block texto_hero %}Converter arquivos PDF{% endblock texto_hero %}
+
+    {% block extrahead %}
+    {% endblock extrahead %}
+
+    {% block content %}
+    <form method='POST' action='{% url 'pdf_merge' %}' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <input type='text' name='final_name' placeholder='nome final'><br></br>
+    <input type='file' name='arqpdf_1' accept='.pdf' data-buttonText="Coloque seu arquivos aqui"><br></br>
+    <input type='file' name='arqpdf_2' accept='.pdf' data-buttonText="Coloque seu arquivos aqui"><br></br>
+        <button type="submit" class="btn btn-success justify-content">Converter</button>
+    </form>
+    {% endblock content %}

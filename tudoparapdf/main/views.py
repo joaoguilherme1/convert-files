@@ -1,3 +1,4 @@
+from typing import final
 from django.conf import settings
 from django.http import response
 from django.http.response import HttpResponse
@@ -6,24 +7,47 @@ from django.urls.conf import path
 from django.template.response import TemplateResponse
 #from django.views.generic import TemplateView
 from django.http import FileResponse #, HttpResponse
+import PyPDF2
 import pyheif
 from PIL import Image
 import os
 import zipfile as zp
-import random as rd
-import time as tm
 
 def home(request):
     return TemplateResponse(request, 'home.html', {})
 
-def pdf(request):
-    return TemplateResponse(request, 'pdf.html', {})
+def pdf_merge(request):
+    if request.method == 'GET':
+        return TemplateResponse(request, 'pdf_merge.html', {})
+
+    elif request.method == 'POST':
+
+        final_name = request.POST['final_name']
+        arqpdf_1 = request.FILES.getlist('arqpdf_1')
+        arqpdf_2 = request.FILES.getlist('arqpdf_2')
+        name_dir_with_main_dir = f'/tmp/{final_name}.pdf'
+
+        dados_arq1 = PyPDF2.PdfFileReader(open(arqpdf_1[0].temporary_file_path(), "rb"))
+        dados_arq2 = PyPDF2.PdfFileReader(open(arqpdf_2[0].temporary_file_path(), "rb"))
+
+        merge = PyPDF2.PdfFileMerger()
+
+        merge.append(dados_arq1)
+        merge.append(dados_arq2)
+
+        merge.write(name_dir_with_main_dir)
+        final = open(name_dir_with_main_dir, "rb")
+        return FileResponse(final)
+
+def pdf_exclude_and_merge(request):
+    return TemplateResponse(request, 'pdf_exclude_and_merge.html', {})
 
 def csv(request):
     return TemplateResponse(request, 'csv.html', {})
 
 def docx(request):
     return TemplateResponse(request, 'docx.html', {})
+
 def heic_to_jpeg(request):
 
     if request.method == 'GET':

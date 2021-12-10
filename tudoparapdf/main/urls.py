@@ -6,7 +6,8 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('pdf', views.pdf, name='pdf'),
+    path('pdf_merge', views.pdf_merge, name='pdf_merge'),
+    path('pdf_exclude_and_merge', views.pdf_exclude_and_merge, name='pdf_exclude_and_merge'),
     path('csv', views.csv, name='csv'),
     path('docx', views.docx, name='docx'),
     path('heic_to_jpeg', views.heic_to_jpeg, name='heic_to_jpeg'),
