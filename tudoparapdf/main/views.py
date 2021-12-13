@@ -40,7 +40,41 @@ def pdf_merge(request):
         return FileResponse(final)
 
 def pdf_exclude_and_merge(request):
-    return TemplateResponse(request, 'pdf_exclude_and_merge.html', {})
+    if request.method == 'GET':
+        return TemplateResponse(request, 'pdf_exclude_and_merge.html', {})
+
+    elif request.method == 'POST':
+        
+        nome_arquivo_saida = request.POST['nome_arquivo_saida']
+        pagina_pra_tirar = request.POST['pagina_pra_tirar']
+        arquivo_entrada = request.FILES.getlist('arquivo_entrada')
+        mid_arquivo = f'/tmp/midlevel.pdf'
+        arquivo_pra_merge = request.FILES.getlist('arquivo_pra_merge')
+
+        name_dir_with_main_dir = f'/tmp/{nome_arquivo_saida}.pdf'
+
+        #tirando a pagina do arquivo de entrada
+        data = PyPDF2.PdfFileWriter()
+        pdfdata = PyPDF2.PdfFileReader(arquivo_entrada[0].temporary_file_path())
+        for i in range(pdfdata.getNumPages()):
+            if str(i) not in pagina_pra_tirar:
+                page = pdfdata.getPage(i)
+                data.addPage(page)
+        with open(mid_arquivo, "wb") as f:
+            data.write(f)
+
+        #mergeando os arquivos
+        dados_arq1 = PyPDF2.PdfFileReader(open(mid_arquivo, "rb"))
+        dados_arq2 = PyPDF2.PdfFileReader(open(arquivo_pra_merge[0].temporary_file_path(), "rb"))
+
+        merge = PyPDF2.PdfFileMerger()
+
+        merge.append(dados_arq1)
+        merge.append(dados_arq2)
+
+        merge.write(name_dir_with_main_dir)
+        final = open(name_dir_with_main_dir, "rb")
+        return FileResponse(final)
 
 def csv(request):
     return TemplateResponse(request, 'csv.html', {})

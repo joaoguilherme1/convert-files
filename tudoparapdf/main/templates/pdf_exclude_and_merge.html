@@ -10,7 +10,7 @@
     <form method='POST' action='{% url 'pdf_exclude_and_merge' %}' enctype='multipart/form-data'>
         {% csrf_token %}
         <input type='text' name='nome_arquivo_saida' placeholder='nome do arquivo de saida'><br></br>
-        <input type='number' name='pagina_pra_tirar' placeholder='numero da pagina'><br></br>
+        <input type='text' name='pagina_pra_tirar' placeholder='numero da pagina'><br></br>
         <input type='file' name='arquivo_entrada' accept='.pdf' data-buttonText="Coloque seu arquivos aqui"><br></br>
         <input type='file' name='arquivo_pra_merge' accept='.pdf' data-buttonText="Coloque seu arquivos aqui"><br></br>
             <button type="submit" class="btn btn-success justify-content">Converter</button>
